@@ -32,7 +32,7 @@ prButton = elements.create("paymentRequestButton", {
           // One of 'dark', 'light', or 'light-outline'
           // Defaults to 'dark'
     
-          height: '31px'
+          height: '45px'
           // Defaults to '40px'. The width is always '100%'.
         },
       },    
