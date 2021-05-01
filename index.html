@@ -5,10 +5,47 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Stripe With Apple Demo</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="https://dashboard.stripe.com/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
 <body>
-    <h1>Demo</h1>
+    <div class="container">
+        <div class="row col-sm-12">
+          <div class="page-header">
+            <h1>Apple Pay on the Web Stripe Demo</h1>
+    
+            <p class="lead">
+              Collect payment and address information from your customers using <a href="https://stripe.com/docs/apple-pay" target="_blank">Apple Pay</a> and the <a href="https://stripe.com/docs/payment-request-api" target="_blank">Payment Request API</a> by using the Payment Request Button Element.
+            </p>
+          </div>
+    
+    
+          <h3>Live Output</h3>
+    
+          <div id="output" class="output">
+            <div id="payment-request-button"></div>
+            <p id="status" class="bg-warning"></p>
+            <div><pre id="log"></pre></div>
+            <hr>
+            <p>To learn more about Payment Request API, a few documents and resources are available:</p>
+            <ul>
+              <li><a href="https://stripe.com/docs/elements/payment-request-button" target="_blank">Integrate the Stripe Payment Request Button</a></li>
+              <li><a href="https://www.w3.org/TR/payment-request/" target="_blank">Official W3C specification</a></li>
+              <li><a href="https://developers.google.com/web/fundamentals/primers/payment-request/" target="_blank">Payment Request API integration guide (by Google)</a></li>
+              <li><a href="https://googlechrome.github.io/samples/paymentrequest/" target="_blank">Demo Collection (by Google)</a></li>
+            </ul>
+    
+          </div>
+        </div>
+      </div>
+    
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+      <!-- Stripe.js V3 for Elements -->
+      <script src="https://js.stripe.com/v3/"></script>
+      <!-- Local Code -->
+      <script src="app.js"></script>
 </body>
 </html>
