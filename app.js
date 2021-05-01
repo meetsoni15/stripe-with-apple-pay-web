@@ -21,21 +21,7 @@ paymentRequest.on("source", (event) => {
   // Send the source to your server to charge it!
 });
 prButton = elements.create("paymentRequestButton", {
-    paymentRequest: paymentRequest,
-    style: {
-        paymentRequestButton: {
-          type: 'default',
-          // One of 'default', 'book', 'buy', or 'donate'
-          // Defaults to 'default'
-    
-          theme: 'dark',
-          // One of 'dark', 'light', or 'light-outline'
-          // Defaults to 'dark'
-    
-          height: '45px'
-          // Defaults to '40px'. The width is always '100%'.
-        },
-      },    
+    paymentRequest,   
 });
 // Check the availability of the Payment Request API first.
 paymentRequest.canMakePayment().then((result) => {
