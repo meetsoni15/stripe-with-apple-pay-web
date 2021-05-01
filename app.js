@@ -6,7 +6,7 @@ elements = stripe.elements();
 
 // Config payment request
 paymentRequest = stripe.paymentRequest({
-  country: "IN",
+  country: "US",
   currency: "usd",
   total: {
     label: "total",
@@ -17,10 +17,25 @@ paymentRequest = stripe.paymentRequest({
 paymentRequest.on("source", (event) => {
   console.log("Got source: ", event.source.id);
   event.complete("success");
+  ChromeSamples.log(JSON.stringify(event.source, 2));
   // Send the source to your server to charge it!
 });
 prButton = elements.create("paymentRequestButton", {
-  paymentRequest,
+    paymentRequest: paymentRequest,
+    style: {
+        paymentRequestButton: {
+          type: 'default',
+          // One of 'default', 'book', 'buy', or 'donate'
+          // Defaults to 'default'
+    
+          theme: 'dark',
+          // One of 'dark', 'light', or 'light-outline'
+          // Defaults to 'dark'
+    
+          height: '31px'
+          // Defaults to '40px'. The width is always '100%'.
+        },
+      },    
 });
 // Check the availability of the Payment Request API first.
 paymentRequest.canMakePayment().then((result) => {
@@ -28,5 +43,56 @@ paymentRequest.canMakePayment().then((result) => {
     prButton.mount("#payment-request-button");
   } else {
     document.getElementById("payment-request-button").style.display = "none";
+    ChromeSamples.setStatus("Please add payment method in your browser or click on add payment methods");
   }
 });
+
+const AddPaymentMethod = () => {
+    const supportedPaymentMethods = [
+        {
+          supportedMethods: 'basic-card',
+        }
+      ];
+      const paymentDetails = {
+        total: {
+          label: 'Total',
+          amount:{
+            currency: 'USD',
+            value: 0
+          }
+        }
+      };
+      const options = {};
+      const request = new PaymentRequest(
+        supportedPaymentMethods,
+        paymentDetails,
+        options)
+    request.show();   
+}
+
+// Helpers
+var ChromeSamples = {
+    log: function() {
+      var line = Array.prototype.slice.call(arguments).map(function(argument) {
+        return typeof argument === 'string' ? argument : JSON.stringify(argument);
+      }).join(' ');
+  
+      document.querySelector('#log').textContent += line + '\n';
+    },
+  
+    clearLog: function() {
+      document.querySelector('#log').textContent = '';
+    },
+  
+    setStatus: function(status) {
+      document.querySelector('#status').textContent = status;
+    },
+  
+    setContent: function(newContent) {
+      var content = document.querySelector('#content');
+      while(content.hasChildNodes()) {
+        content.removeChild(content.lastChild);
+      }
+      content.appendChild(newContent);
+    }
+  };

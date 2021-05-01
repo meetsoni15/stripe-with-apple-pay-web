@@ -12,30 +12,45 @@
     <div class="container">
         <div class="row col-sm-12">
           <div class="page-header">
-            <h1>Apple Pay on the Web Stripe Demo</h1>
-    
-            <p class="lead">
+            <h1 style="text-align: center;">Apple Pay on the Web Stripe Demo</h1>
+            <p class="lead" style="margin-top: 15px;">
               Collect payment and address information from your customers using <a href="https://stripe.com/docs/apple-pay" target="_blank">Apple Pay</a> and the <a href="https://stripe.com/docs/payment-request-api" target="_blank">Payment Request API</a> by using the Payment Request Button Element.
             </p>
           </div>
-    
-    
-          <h3>Live Output</h3>
-    
+          <h3>Pay Button:</h3>
           <div id="output" class="output">
             <div id="payment-request-button"></div>
             <p id="status" class="bg-warning"></p>
             <div><pre id="log"></pre></div>
             <hr>
-            <p>To learn more about Payment Request API, a few documents and resources are available:</p>
-            <ul>
-              <li><a href="https://stripe.com/docs/elements/payment-request-button" target="_blank">Integrate the Stripe Payment Request Button</a></li>
-              <li><a href="https://www.w3.org/TR/payment-request/" target="_blank">Official W3C specification</a></li>
-              <li><a href="https://developers.google.com/web/fundamentals/primers/payment-request/" target="_blank">Payment Request API integration guide (by Google)</a></li>
-              <li><a href="https://googlechrome.github.io/samples/paymentrequest/" target="_blank">Demo Collection (by Google)</a></li>
-            </ul>
-    
           </div>
+        </div>
+        <div class="row col-sm-12">
+                <h3>Add Payment Method Button:</h3>
+                <div id="">
+                <Button onclick="AddPaymentMethod()">Add payment method</Button>
+                </div>
+            
+        
+                <div id="demo">
+                    <h2>For testing purpose add below card details:</h2>
+                    <p class="label">Demo in test mode</p>
+                    <p class="note">You can copy and paste the following test cards to trigger different scenarios:</p>
+                    <table class="note">
+                      <tbody><tr>
+                        <td>Default US card:</td>
+                        <td class="card-number">4242<span></span>4242<span></span>4242<span></span>4242</td>
+                      </tr>
+                      <tr>
+                        <td><a href="https://stripe.com/guides/strong-customer-authentication" target="_blank">Authentication</a> required:</td>
+                        <td class="card-number">4000<span></span>0027<span></span>6000<span></span>3184</td>
+                      </tr>
+                      </tbody></table>
+                    <p class="note"> 
+                      See the <a href="https://stripe.com/docs/testing#cards" target="_blank">docs</a> for a full list of test cards. 
+                      Non-card payments will redirect to test pages.
+                    </p>
+                  </div>
         </div>
       </div>
     
