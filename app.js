@@ -1,4 +1,4 @@
-var STRIPE_PK = "pk_test_IR0lZ3Ot5IQnsde6xuAmkHvB";
+var STRIPE_PK = "pk_test_51ImC5sIe3qrPUgax8Eu5M10vE31tpXedkwmmIzuMuMPCkCJmKEr3uchlcOfdQZb61UL8UP6Zc76tuUdVzW58n49o00BwZJIfT6";
 
 // Config Stripe.js V3
 stripe = Stripe(STRIPE_PK);
