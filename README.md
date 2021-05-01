@@ -10,7 +10,7 @@ If you’re running a compatible browser, this demo also showcases for now Apple
 
 <img src="docs/images/screenshots/demo-google-chrome.png" alt="Demo on Google Chrome" width="610">
 
-**If you are unable to see payment button, add payment method in your browser or if you want to see how payment option really look please click on test funality button, It seems as google/apple pay payment popup. From there add payment method as well.
+**If you are unable to see payment button, add payment method in your browser or if you want to see how payment option really look please click on test funality button, It seems as google/apple pay payment popup. From there add payment method as well.**
 
 You can copy and paste the following test cards to trigger different scenarios:
 
